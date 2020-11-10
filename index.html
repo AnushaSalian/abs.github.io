@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SOLVE Simulation</title>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/> -->
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<style>
+#can {
+ border: 1px solid black;
+}
+</style>
+<script>
+function setSimualtionScreen(ele) {
+	//document.getElementById("simHead").innerHTML = ele.innerHTML;
+	console.log(ele);
+	switch(ele.id) {
+			case "baseExcitation": document.getElementById("can").src = "BaseExcitation/index.html";
+						break;
+			case "forcedVibration": document.getElementById("can").src = "forcedVibration/index.html";
+						break;
+	}
+}
+</script>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-3">
+			<div class="panel panel-default">
+				<div class="panel-heading"></div>
+					<div class="panel-body">
+					<div class="btn-toolbar">
+						<button id="forcedVibration" class="btn btn-primary btn-sm" onclick="setSimualtionScreen(this);"  title="Click here to view simulation">Forced Vibration</button><br><br>
+						<button id="baseExcitation" class="btn btn-primary btn-sm" onclick="setSimualtionScreen(this);" title="Click here to view simulation">Base Excitation</button><br><br>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="col-xs-9">
+			<!-- <h4 id="simHead">SIMULATION</h4> -->
+			<iframe id="can"  width="1000" height = "605" src="" style="border:none"></iframe>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>
